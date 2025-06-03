@@ -45,7 +45,7 @@ if (isset($_GET['logout'])) {
 function getAllApplications($db) {
     $stmt = $db->query("
         SELECT a.*, u.login 
-        FROM application a
+        FROM applications a
         JOIN users u ON a.id = u.application_id
         ORDER BY a.id
     ");
@@ -56,7 +56,7 @@ function getApplicationLanguages($db, $application_id) {
     $stmt = $db->prepare("
         SELECT l.id, l.name 
         FROM application_languages al
-        JOIN languages l ON al.language_id = l.id
+        JOIN programming_languages l ON al.language_id = l.id
         WHERE al.application_id = ?
     ");
     $stmt->execute([$application_id]);
@@ -66,7 +66,7 @@ function getApplicationLanguages($db, $application_id) {
 function getLanguagesStatistics($db) {
     $stmt = $db->query("
         SELECT l.id, l.name, COUNT(al.application_id) as user_count
-        FROM languages l
+        FROM programming_languages l
         LEFT JOIN application_languages al ON l.id = al.language_id
         GROUP BY l.id, l.name
         ORDER BY user_count DESC
@@ -75,7 +75,7 @@ function getLanguagesStatistics($db) {
 }
 
 function getAllLanguages($db) {
-    $stmt = $db->query("SELECT id, name FROM languages ORDER BY name");
+    $stmt = $db->query("SELECT id, name FROM programming_languages ORDER BY name");
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
@@ -92,7 +92,7 @@ if (isset($_GET['delete'])) {
         $stmt = $db->prepare("DELETE FROM users WHERE application_id = ?");
         $stmt->execute([$id]);
         
-        $stmt = $db->prepare("DELETE FROM application WHERE id = ?");
+        $stmt = $db->prepare("DELETE FROM applications WHERE id = ?");
         $stmt->execute([$id]);
         
         $db->commit();
@@ -122,7 +122,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['edit_application'])) {
         $db->beginTransaction();
         
         $stmt = $db->prepare("
-            UPDATE application SET 
+            UPDATE applications SET 
             first_name = ?, last_name = ?, patronymic = ?, phone = ?, 
             email = ?, dob = ?, gender = ?, bio = ?
             WHERE id = ?
@@ -152,7 +152,7 @@ $edit_data = null;
 if (isset($_GET['edit'])) {
     $id = (int)$_GET['edit'];
     $stmt = $db->prepare("
-        SELECT * FROM application WHERE id = ?
+        SELECT * FROM applications WHERE id = ?
     ");
     $stmt->execute([$id]);
     $edit_data = $stmt->fetch(PDO::FETCH_ASSOC);

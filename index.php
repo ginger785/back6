@@ -45,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     if (!empty($_SESSION['login'])) {
         try {
             $stmt = $db->prepare("
-                SELECT a.* FROM application a
+                SELECT a.* FROM applications a
                 JOIN users u ON a.id = u.application_id
                 WHERE u.login = ?
             ");
@@ -167,7 +167,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $db->beginTransaction();
             
             $stmt = $db->prepare("
-                UPDATE application SET 
+                UPDATE applications SET 
                 first_name = ?, last_name = ?, patronymic = ?, phone = ?, 
                 email = ?, dob = ?, gender = ?, bio = ?
                 WHERE id = (SELECT application_id FROM users WHERE login = ?)
@@ -191,7 +191,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $db->beginTransaction();
             
             $stmt = $db->prepare("
-                INSERT INTO application 
+                INSERT INTO applications
                 (first_name, last_name, patronymic, phone, email, dob, gender, bio)
                 VALUES (?, ?, ?, ?, ?, ?, ?, ?)
             ");
