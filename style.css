@@ -1,0 +1,238 @@
+/* Основные стили */
+body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background-color: #fff5f7;
+    padding: 20px;
+    min-height: 100vh;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* Контейнеры */
+.form-container {
+    max-width: 600px;
+    margin: 30px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(255, 182, 193, 0.2);
+    border: 1px solid #ffebee;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* Кнопки */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: 500;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-decoration: none;
+    border: none;
+}
+
+.btn-primary {
+    background-color: #ff8fab;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #ff7096;
+    transform: translateY(-1px);
+}
+
+.btn-secondary {
+    background-color: #d8b4fe;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: #c77dff;
+    transform: translateY(-1px);
+}
+
+.btn-danger {
+    background-color: #ff758f;
+    color: white;
+}
+
+.btn-danger:hover {
+    background-color: #ff567d;
+}
+
+/* Формы */
+.form-group {
+    margin-bottom: 1.2rem;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 0.6rem;
+    font-weight: 500;
+    color: #888;
+}
+
+.form-control {
+    width: 100%;
+    padding: 0.7rem;
+    border: 1px solid #ffd6e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: #fffafb;
+}
+
+.form-control:focus {
+    border-color: #ffb3c6;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgba(255, 143, 171, 0.25);
+}
+
+select[multiple].form-control {
+    height: auto;
+    min-height: 120px;
+}
+
+/* Ошибки */
+.is-invalid {
+    border-color: #ff758f;
+}
+
+.error-message {
+    color: #ff758f;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}
+
+/* Уведомления */
+.alert {
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1.2rem;
+}
+
+.alert-info {
+    background-color: #fff0f3;
+    border-left: 4px solid #ff8fab;
+    color: #888;
+}
+
+.alert-danger {
+    background-color: #fff0f3;
+    border-left: 4px solid #ff758f;
+    color: #888;
+}
+
+/* Радио кнопки */
+.gender-options {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+.gender-options label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #888;
+}
+
+/* Таблицы */
+.table {
+    width: 100%;
+    margin-bottom: 20px;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(255, 182, 193, 0.2);
+}
+
+.table th, .table td {
+    padding: 12px 15px;
+    border: 1px solid #ffebee;
+    text-align: left;
+}
+
+.table th {
+    background-color: #ffebee;
+    font-weight: 600;
+    color: #888;
+}
+
+.table tr:nth-child(even) {
+    background-color: #fffafb;
+}
+
+.table tr:hover {
+    background-color: #fff0f3;
+}
+
+/* Форма редактирования */
+.edit-form {
+    background-color: #fffafb;
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    border: 1px solid #ffebee;
+    box-shadow: 0 4px 15px rgba(255, 182, 193, 0.1);
+}
+
+/* Кнопки авторизации */
+.auth-buttons {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .form-container {
+        padding: 20px;
+    }
+    
+    .auth-buttons {
+        position: static;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    
+    .table-responsive {
+        overflow-x: auto;
+    }
+}
+
+/* Заголовок */
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #ffd6e0;
+}
+
+/* Языки в форме */
+.language-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.language-option {
+    display: flex;
+    align-items: center;
+    background: #fff0f3;
+    padding: 8px 12px;
+    border-radius: 6px;
+}
+
+.language-option label {
+    margin-left: 8px;
+    color: #888;
+}

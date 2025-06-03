@@ -1,0 +1,205 @@
+/* Основные стили админки */
+body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background-color: #fff5f7;
+    padding: 20px;
+    color: #555;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(255, 182, 193, 0.2);
+    border: 1px solid #ffebee;
+}
+
+/* Заголовок */
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #ffd6e0;
+}
+
+.admin-header h1 {
+    color: #ff7096;
+    margin: 0;
+}
+
+/* Таблицы */
+.table {
+    width: 100%;
+    margin-bottom: 25px;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(255, 182, 193, 0.15);
+}
+
+.table th, .table td {
+    padding: 12px 15px;
+    border: 1px solid #ffebee;
+    text-align: left;
+}
+
+.table th {
+    background-color: #ffebee;
+    font-weight: 600;
+    color: #888;
+}
+
+.table tr:nth-child(even) {
+    background-color: #fffafb;
+}
+
+.table tr:hover {
+    background-color: #fff0f3;
+}
+
+/* Форма редактирования */
+.edit-form {
+    background-color: #fffafb;
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    border: 1px solid #ffebee;
+    box-shadow: 0 4px 10px rgba(255, 182, 193, 0.1);
+}
+
+.edit-form h2 {
+    color: #ff7096;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+/* Кнопки */
+.btn {
+    padding: 10px 18px;
+    border-radius: 8px;
+    text-decoration: none;
+    display: inline-block;
+    font-weight: 500;
+    transition: all 0.2s;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: #ff8fab;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #ff7096;
+    transform: translateY(-1px);
+}
+
+.btn-danger {
+    background-color: #ff758f;
+    color: white;
+}
+
+.btn-danger:hover {
+    background-color: #ff567d;
+    transform: translateY(-1px);
+}
+
+.btn-secondary {
+    background-color: #d8b4fe;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: #c77dff;
+}
+
+/* Элементы формы */
+.form-group {
+    margin-bottom: 1.2rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.6rem;
+    font-weight: 500;
+    color: #888;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group input[type="date"],
+.form-group textarea {
+    width: 100%;
+    padding: 0.7rem;
+    border: 1px solid #ffd6e0;
+    border-radius: 8px;
+    background-color: #fffafb;
+}
+
+.form-group textarea {
+    min-height: 120px;
+}
+
+/* Языки программирования */
+.language-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.language-option {
+    display: flex;
+    align-items: center;
+    background: #fff0f3;
+    padding: 8px 12px;
+    border-radius: 8px;
+}
+
+.language-option label {
+    margin-left: 8px;
+    color: #888;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+    
+    .table-responsive {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .admin-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    .edit-form {
+        padding: 20px;
+    }
+}
+
+/* Радио кнопки */
+.gender-options {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+.gender-options label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #888;
+}
